@@ -6,8 +6,8 @@ import useChat from "../useChat";
 
 const ChatRoom = (props) => {
   const { roomId } = props.match.params;
-  const { messages, sendMessage } = useChat({ roomId });
-  const [newMessage, setNewMessage] = useState([]);
+  const { messages, sendMessage } = useChat(roomId);
+  const [newMessage, setNewMessage] = useState("");
 
   const handleNewMessageChange = (event) => {
     setNewMessage(event.target.value);
@@ -24,9 +24,9 @@ const ChatRoom = (props) => {
         <h1 className="room-name">Room: {roomId}</h1>
         <div className="messages-container">
           <ol className="messages-list">
-            {messages.map((message, id) => (
+            {messages.map((message, i) => (
               <li
-                key={id}
+                key={i}
                 className={`message-item ${
                   message.ownedByCurrentUser ? "my-message" : "received-message"
                 }`}
