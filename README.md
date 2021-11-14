@@ -1,6 +1,6 @@
 # Sprehapp
 
-Example todo application developed during Frontend developer course in ALgebra.
+Chat app that was created to show how socket.io and dynamical roomId works. You can choose any name for your chat room and you can have conversations with anyone that is sharing same roomId. 
 
 ## Instructions
 1. `npm install`
